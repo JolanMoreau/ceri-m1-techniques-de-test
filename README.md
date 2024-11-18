@@ -5,6 +5,12 @@ Groupe: M1 -IA -classique -CMI
 Badge CircleCI: [![CircleCI](https://dl.circleci.com/status-badge/img/gh/JolanMoreau/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/JolanMoreau/ceri-m1-techniques-de-test/tree/master)
 
 Badge Codecov: [![codecov](https://codecov.io/github/JolanMoreau/ceri-m1-techniques-de-test/graph/badge.svg?token=OOCR5BUDE0)](https://codecov.io/github/JolanMoreau/ceri-m1-techniques-de-test)
+
+Checkstyle: ![Checkstyle](https://img.shields.io/badge/Checkstyle-passed-brightgreen)
+
+Github Pages: [![GitHub Pages](https://img.shields.io/website?url=https%3A%2F%2Fjolanmoreau.github.io%2Fceri-m1-techniques-de-test%2F)](https://jolanmoreau.github.io/ceri-m1-techniques-de-test/)
+## Lien vers la documentation Javadoc
+La documentation générée automatiquement est disponible [ici](https://jolanmoreau.github.io/ceri-m1-techniques-de-test/).
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
