@@ -32,7 +32,8 @@ jobs:
             git config --global user.email "bot@circleci.com"
             
             
-            git clone --branch gh-pages https://github.com/JolanMoreau/ceri-m1-techniques-de-test.git gh-pages
+            git clone --branch gh-pages https://$GITHUB_TOKEN@github.com/JolanMoreau/ceri-m1-techniques-de-test.git gh-pages
+
 
             
             rm -rf gh-pages/*
