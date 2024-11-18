@@ -1,11 +1,8 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
 orbs:
   codecov: codecov/codecov@4.0.1
 
-# Define a job to be invoked later in a workflow.
 jobs:
   build-and-test:
     docker:
@@ -24,9 +21,31 @@ jobs:
           command: mvn jacoco:report  # Assuming you're using Jacoco for code coverage
       - codecov/upload:
           file: target/site/jacoco/jacoco.xml  # Specify the path to the coverage report
+      - run:
+          name: Generate Javadoc
+          command: mvn javadoc:javadoc  # Generates Javadoc in target/site/apidocs
+      - run:
+          name: Deploy Javadoc to GitHub Pages
+          command: |
+            
+            git config --global user.name "circleci-bot"
+            git config --global user.email "bot@circleci.com"
+            
+            
+            git clone --branch gh-pages https://github.com/JolanMoreau/ceri-m1-techniques-de-test.git gh-pages
+
+            
+            rm -rf gh-pages/*
+            cp -r target/site/apidocs/* gh-pages/
+
+            
+            cd gh-pages
+            git add .
+            git commit -m "Auto-update Javadoc [skip ci]"
+            git push origin gh-pages
 
 # Orchestrate jobs using workflows
 workflows:
-  sample:
+  main:
     jobs:
       - build-and-test
